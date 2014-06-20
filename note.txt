@@ -1,0 +1,7 @@
+https://github.com/spumko/makemehapi
+
+http://hapijs.com/api
+
+https://github.com/hueniverse/postmile
+https://github.com/hueniverse/postmile-api
+https://github.com/hueniverse/postmile-web
