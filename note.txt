@@ -1,6 +1,7 @@
 https://github.com/spumko/makemehapi
 
 http://hapijs.com/api
+http://hapijs.com/api#route-options
 
 https://github.com/hueniverse/postmile
 https://github.com/hueniverse/postmile-api

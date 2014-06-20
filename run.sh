@@ -1,2 +1,2 @@
 #!/bin/sh
-node node_modules/.bin/makemehapi
+node node_modules/.bin/makemehapi $*
