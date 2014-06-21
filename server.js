@@ -1,5 +1,22 @@
 var hapi = require('hapi');
-var server = new hapi.Server(8080);
+var server = new hapi.Server('localhost', 8080);
+
+//plugins
+server.pack.register({
+	name: 'furball',
+	version: '1.0.1',
+	register: require('furball').register,
+	options: {
+		version: '/version',
+		plugins: '/plugins'
+	}
+}, function(err) {
+	if (err) {
+		console.log('Failed to load plugin. // ' + err);
+	}
+});
+
+// routes
 var routes = [{
 	path: '/',
 	method: 'GET',
@@ -13,5 +30,7 @@ var routes = [{
 		reply('Hello ' + request.params.name);
 	}
 }];
+
+// start
 server.route(routes);
 server.start();
