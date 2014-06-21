@@ -1,11 +1,17 @@
 var hapi = require('hapi');
 var server = new hapi.Server(8080);
-var routeObject = {
+var routes = [{
 	path: '/',
 	method: 'GET',
 	handler: function(request, reply) {
 		reply('Hello Hapi');
 	}
-};
-server.route(routeObject);
+},{
+	path: '/{name}',
+	method: 'GET',
+	handler: function(request, reply) {
+		reply('Hello ' + request.params.name);
+	}
+}];
+server.route(routes);
 server.start();
