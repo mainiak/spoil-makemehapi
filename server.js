@@ -2,6 +2,7 @@ var hapi = require('hapi');
 var options = {
 	views: {
 		path: 'templates',
+		helpersPath: 'helpers',
 		engines: {
 			html: require('handlebars')
 		}
