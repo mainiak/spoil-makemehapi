@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "furball": "^1.0.1",
+    "handlebars": "^2.0.0-alpha.4",
     "hapi": "^6.0.2",
     "makemehapi": "^0.2.2"
   },

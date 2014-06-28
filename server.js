@@ -1,5 +1,13 @@
 var hapi = require('hapi');
-var server = new hapi.Server('localhost', Number(process.argv[2] || 8080));
+var options = {
+	views: {
+		path: 'templates',
+		engines: {
+			html: require('handlebars')
+		}
+	}
+};
+var server = new hapi.Server('localhost', Number(process.argv[2] || 8000), options);
 
 //plugins
 server.pack.register({
@@ -20,9 +28,12 @@ server.pack.register({
 var routes = [{
 	path: '/',
 	method: 'GET',
+	/*
 	handler: function(request, reply) {
 		reply('Hello Hapi');
 	}
+	*/
+	handler: {view: 'index.html'}
 },{
 	path: '/foo/bar/baz/{param}',
 	method: 'GET',
