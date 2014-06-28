@@ -1,4 +1,6 @@
+var fs = require('fs');
 var hapi = require('hapi');
+var ROT13Stream = require('./simple-rot13-stream');
 var options = {
 	views: {
 		path: 'templates',
@@ -29,12 +31,14 @@ server.pack.register({
 var routes = [{
 	path: '/',
 	method: 'GET',
-	/*
 	handler: function(request, reply) {
-		reply('Hello Hapi');
+		var rot13 = new ROT13Stream();
+		//reply('Hello Hapi');
+		reply(fs.createReadStream('./clear.txt').pipe(rot13));
 	}
-	*/
+	/*
 	handler: {view: 'index.html'}
+	*/
 },{
 	path: '/foo/bar/baz/{param}',
 	method: 'GET',
