@@ -20,8 +20,14 @@ server.pack.register({
 var routes = [{
 	path: '/',
 	method: 'GET',
+	handler: function(request, reply) {
+		reply('Hello Hapi');
+	}
+},{
+	path: '/foo/bar/baz/{param}',
+	method: 'GET',
 	handler: {
-		file: 'index.html'
+		directory: {path: './public'}
 	}
 },{
 	path: '/{name}',
