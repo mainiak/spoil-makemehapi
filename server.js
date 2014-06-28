@@ -1,5 +1,5 @@
 var hapi = require('hapi');
-var server = new hapi.Server('localhost', 8080);
+var server = new hapi.Server('localhost', Number(process.argv[2] || 8080));
 
 //plugins
 server.pack.register({
@@ -22,6 +22,7 @@ var routes = [{
 	method: 'GET',
 	handler: function(request, reply) {
 		reply('Hello Hapi');
+		//reply({mustFollow: true});
 	}
 },{
 	path: '/{name}',
@@ -33,4 +34,6 @@ var routes = [{
 
 // start
 server.route(routes);
-server.start();
+server.start(function() {
+	console.log("Hapi server started @", server.info.uri);
+});

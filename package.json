@@ -1,12 +1,12 @@
 {
-  "name": "makemehapi",
+  "name": "spoil-makemehapi",
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
     "furball": "^1.0.1",
     "hapi": "^6.0.2",
-    "makemehapi": "^0.0.4"
+    "makemehapi": "^0.2.2"
   },
   "devDependencies": {},
   "scripts": {
