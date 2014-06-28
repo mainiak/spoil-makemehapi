@@ -20,9 +20,8 @@ server.pack.register({
 var routes = [{
 	path: '/',
 	method: 'GET',
-	handler: function(request, reply) {
-		reply('Hello Hapi');
-		//reply({mustFollow: true});
+	handler: {
+		file: 'index.html'
 	}
 },{
 	path: '/{name}',
