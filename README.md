@@ -1,4 +1,4 @@
 spoil-makemehapi
 ================
 
-My implementation when following makemehapi "tutorial" app.
+My implementation when following makemehapi tutorial app.
